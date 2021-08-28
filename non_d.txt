@@ -1,0 +1,6 @@
+n=int(input())
+for i in range(n,1,-1):
+    f = ''.join(sorted(list(str(i))))
+    if f == str(i):
+        print(f)
+        break

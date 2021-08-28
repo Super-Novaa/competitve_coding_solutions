@@ -1,0 +1,5 @@
+s=input()
+r=[int(i) for i in s if i.isdigit() and i!='0']
+k=1
+for i in r:  k=k*i
+print(k)

@@ -1,0 +1,7 @@
+l=[]
+s=[int(x) for x in str(int(input())]
+l.append(1)
+for i in range(1,len(s)):
+    su=s[i]**s[i-1]
+    l.append(su)
+print(l,"\n",sum(l))

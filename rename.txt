@@ -1,0 +1,8 @@
+import os
+path = 'D:/songs/new songs'
+files = os.listdir(path)
+for file in files:
+    if file[0].isdigit():
+        ind=[file.index(x) for x in file if x.isalpha()]
+        os.rename(os.path.join(path, file), os.path.join(path,file[ind[0]:]))
+        

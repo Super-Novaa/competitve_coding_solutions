@@ -1,0 +1,5 @@
+from itertools import permutations
+a,b=input().split(' ')
+m=sorted([int(''.join(p)) for p in permutations(a)])
+l=list(filter(lambda x:x>int(b),m))
+print(l[0] if len(l)!=0 else -1)

@@ -1,0 +1,31 @@
+def rec(v):
+    x=len(str(v))
+    l=["".join(p) for p in product(s,repeat=x)]
+    l=list(map(int,reversed(sorted(set(l)))))
+    for i in l:
+        if i <= v:
+            return(i)
+     
+     
+def red(z):
+    p=[str(p) for p in z]
+    c,d=0,0
+    for i in p:
+        if p[-1]==0:c+=1
+        else:d+=1
+    if c>=v:
+        
+
+s,m="01",[]
+from itertools import product
+n=int(input())
+while(len(str(n))>1):
+    m.append(rec(n))
+    n=n-m[-1]
+if sum(m)!=n:
+    j=[1]*n
+    m+=j
+def red(m)
+print(m)
+
+

@@ -1,0 +1,54 @@
+program:  Remove occurence of '7' and '56' from the string
+
+s=input()
+if '7'  not in s and '56' not in s:print(s)
+else:
+    if '7' in s and '56' not in s:
+        r=[i for i in s if i!='7']
+        print("".join(r))
+        
+    elif '56' in s and '7' not in s:
+        c=s.count('56')
+        if c==1:
+            i=s.index('56')
+            l=s[0:i]
+            r=s[i+2:]
+            print(l+r)
+        else:
+            for i in range(c):
+                i=s.index('56')
+                l=s[0:i]
+                r=s[i+2:]
+                s=l+r
+            print(s)
+                
+        
+    else:
+        r=[i for i in s if i!='7']
+        k="".join(r)
+        c=k.count('56')
+        if c==1:
+            i=k.index('56')
+            l=k[0:i]
+            r=k[i+2:]
+            print(l+r)
+        else:
+            for i in range(c):
+                i=k.index('56')
+                l=k[0:i]
+                r=k[i+2:]
+                k=l+r
+            print(k)
+
+------------------------------------------------------xxxxxxxxxxxxxxxx----------------xxx------------------------
+
+Method2:
+
+
+
+s=input()
+s=s.replace('56','')
+s=s.replace('7','')
+print(s)
+        
+        

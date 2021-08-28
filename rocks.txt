@@ -1,0 +1,10 @@
+s,r=input().split(' ')
+r1=[]
+for i in range(int(r)):
+    r1.append(0)
+l=list(map(int,input().split(' ')))
+for i in range(int(r)):
+    c=list(map(int,input().split(' ')))
+    for j in l:
+        if j<=c[1] and j>=c[0]:r1[i]+=1
+print("".join(list(map(str,r1))))

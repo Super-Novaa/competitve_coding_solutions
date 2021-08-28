@@ -1,0 +1,20 @@
+import math
+n=int(input())
+nl,s=[],0.00
+l=list(map(float,input().split(',')))
+for i in range(0,len(l),3):
+    nl.append(l[i:i+3])
+for i in range(len(nl)-1):
+    if nl[i+1][2]==0:continue
+    if nl[i+1].count(0)>1 or(0 in l[i+1] and 10 in l[i+1]):continue
+    if (nl[i+1][0]==0 and nl[i][0]!=0) or (nl[i+1][1]==0 and nl[i][1]!=0) or (nl[i+1][2]==0 and nl[i][2]!=0):
+        x,y,z=nl[i+1][0]-nl[i][0],nl[i+1][1]-nl[i][1],nl[i+1][2]-nl[i][2]
+        d=math.ceil(math.sqrt(x**2+y**2+z**2))
+        s+=d
+    else:
+        x,y,z=nl[i+1][0]-nl[i][0],nl[i+1][1]-nl[i][1],nl[i+1][2]-nl[i][2]
+        r=math.ceil(math.sqrt(x**2+y**2+z**2))
+        d=round((2*3.14*r)/6,2)
+        s+=d
+print("%.2f" % round(s,2))
+        

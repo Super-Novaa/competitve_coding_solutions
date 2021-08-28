@@ -1,0 +1,47 @@
+Need help in the below python problem. I was trying to solve python problems and got stuck at the below problem. 
+The problems looks to be from heap data structure but I’m not sure how to proceed further and use heap to solve this problem.
+Can someone pls suggest how I can proceed with solving this problem? Any leads will be appreciated.
+Problem Statement:
+In Hyderabad City, there is a sweet shop called Sweetwala. That Shop manager wants to prepare an 
+assorted sweet box. In shop there are N types of sweets are available. In each sweet box manger 
+wants to put M items. Each item's cost is cost[i] and the delivery charge is delivery_cost[i], where i = 
+0 to N. Now condition is that Shop manager wants to select exactly M items in a such way that the 
+total cost should be maximised.
+The total cost of an assorted box = The sum of costs of selected 
+M items + (minimum delivery cost 
+among M items * total no. of items (M)). 
+Help the shop manager find the maximum cost for M items in that assorted box.
+Input Format:
+The first line T denoting the number of test cases. The description of T test cases is as follows.
+•The first line of each test case contains two integers N and M separated with space.
+•The second line of each test case contains N integers where the ith integer indicates the cost[i].
+•The third line of each test case contains N integers where the ith integer denotes the 
+delivery_cost[i].
+Sample Input:
+1
+5 3
+8 7 2 6 10
+1 5 8 4 8
+Output Format:
+For each testcase, display a maximum possible cost for M items.
+35
+Explanation:
+Sweets 2, 4, and 5 could be put in the assorted box. The total cost = (7 + 6 + 10) + (min(4, 5, 8 * 3)) = 35
+
+-------------------------------------------------------------------XXXXXXXXXXXXXXXXXXXXX---------------------------
+
+code: 
+
+
+from itertools import permutations
+t=int(input())
+n,m=map(int,input().split())
+cost=list(map(int,input().split()))
+delivery=list(map(int,input().split()))
+cost_del=[(i,j)for i,j in zip(cost,delivery)]   #------------- create a tuple of (cost[i],del[i])
+r=[]
+for i in permutations(cost_del,m):
+    a=min([j[1] for j in i])*m
+    b=sum([j[0] for j in i])                     #------for each permuation calucate the total cost using formula
+    r.append(a+b)
+print(max(r))          #print max of total cost

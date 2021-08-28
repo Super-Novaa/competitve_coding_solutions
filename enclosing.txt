@@ -1,0 +1,18 @@
+t,s1,s2,l=int(input()),"@*","*@",[]
+for i in range(t):
+    l.append(input())
+for j in l:
+    ns1 = j[0:j.index(s1)]
+    ns2 = j[j.index(s2) + 2:]
+    s3 = ns1 + ns2
+    a = s3.count('(')
+    b = s3.count(')')
+    c = s3.count('{')
+    d = s3.count('}')
+    e = s3.count('[')
+    f = s3.count(']')
+    h = s3.count('<')
+    i = s3.count('>')
+    if a == b and c == d and e == f and h == i:print(True)
+    else:print(False)
+

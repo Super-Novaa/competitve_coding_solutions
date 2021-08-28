@@ -1,0 +1,46 @@
+def lcs(a, b):
+    if len(a)<len(b):
+        s1,s2=b,a
+    else:
+        s1,s2=a,b
+    
+    r=[]
+    index=[]
+    c=0
+    for i in range(len(s2)):
+        if len(index)==0:
+            if s2[i] in s1: 
+                index.append(s1.index(s2[i]))
+                r.append(1)
+            else:
+                r.append(0)
+        else:
+            if s2[i] in s1:
+                if s2[i] in s1[index[-1]+1:]:
+                    r.append(1)
+                    index.append(s1[index[-1]+1:].index(s2[i]))
+                else:
+                    r.append(0)
+                    index.append(s1.index(s2[i]))
+            else:r.append(0)
+        
+    f=[]       
+    for i in range(len(index)-1):
+        if index[i]<=index[i+1]:
+            c=c+1
+        else:
+            f.append(c)
+            c=0
+            f.append(c)
+    f.append(c)
+    
+    
+    print("index: ",index)
+    print("r: ",r)
+    print("count of 1 in r: ",r.count(1))
+    print("f:",f)
+    print("max of f: ",max(f)+1)
+            
+X="ababbcba"
+Y="abca"
+lcs(X,Y)

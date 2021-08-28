@@ -1,0 +1,23 @@
+import itertools
+
+x=list(map(str,input().split(' ')))
+
+n=int(input())
+
+i,s=1,0
+
+while(s<=n):
+    
+	s=s+(2**i)
+    
+	i+=1
+m=x
+
+for i in range(2,i):
+   
+ l=["".join(p) for p in itertools.product(x, repeat=i)]
+    
+ m=m+l
+m=list(map(int,m))
+
+print(m,"\n",sorted(m)[n])

@@ -1,0 +1,33 @@
+prob: s1="covering"
+	s2="bring"
+least steps to convert s1 --> s2:5 ( remove cove from s1 and add b)= 4+1
+
+
+
+def lcs(s1, s2):
+    r=[]
+    index=[]
+    for i in range(len(s2)):
+        if s2[i] in s1:
+            if i==0:
+                r.append(1)
+                index.append(s1.index(s2[i]))
+            else:
+                t= s1.index(s2[i])
+                if len(index)!=0:
+                    r.append(1) if t>=index[-1] else r.append(0)
+                    index.append(t)
+                else:
+                    index.append(1)
+                    r.append(1)
+                
+                
+                
+        else:
+            r.append(0)
+    print(r)
+    print((len(Y)-r.count(1))+ (len(X)-r.count(1)))
+            
+X=input()
+Y=input()
+lcs(X,Y)

@@ -1,0 +1,7 @@
+n=[]
+from itertools import permutations
+perms = [''.join(p) for p in permutations(input())]
+for ib in perms:
+    if ib[::-1] == ib:
+        n.append(ib)
+print(*sorted(set(n)),sep='\n')

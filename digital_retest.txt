@@ -1,0 +1,45 @@
+program: print the number given an index from the series (index starts from 1):
+
+Series: 0,0,2,1,4,3,6,5,8,7,10,9....
+
+Sol 1:
+
+r=[]
+l=list(map(int,input().split()))
+for i in range(len(l)):
+    even,odd=0,1
+    if l[i]==1 or l[i]==2:r.append(0)
+    else:
+        if l[i]%2==0:
+            for i in range((l[i]-4)//2):
+                odd=odd+2
+            r.append(odd)
+        else:
+            for i in range(((l[i]-3)//2)+1):
+                even=even+2
+            r.append(even)
+print(*r,sep=",")
+
+
+
+Sol 2: Easy O(1): for list of indexes:
+
+r=[]
+l=list(map(int,input().split()))
+for i in range(len(l)):
+    odd=1
+    if l[i]==1 or l[i]==2:r.append(0)
+    else:
+        if l[i]%2==0:
+            r.append(l[i]-3)
+        else:
+            r.append(l[i]-1)
+print(*r,sep=",")
+
+
+
+For single index:
+
+i=int(input())
+if i==1 or i==2:print(0)
+else:print(i-3 if i%2==0 else i-1)

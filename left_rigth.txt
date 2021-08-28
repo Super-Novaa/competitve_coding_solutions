@@ -1,0 +1,26 @@
+def left(l1,p):
+    flag=0
+    for j in range(p,0,-1):
+        if l1[j]>=l[j-1]:flag+=1
+        else:flag=0
+    if flag==p:return True
+    else:return False
+def rite(l2,pos):
+    flag=0
+    for k in range(pos,len(l2)-1):
+        if l2[k]<=l2[k+1]:flag+=1
+        else:flag=0
+    if flag==(len(l2)-1)-pos:return True
+    else:return False
+t=int(input())
+l=[input().split(' ')]
+l=[int(x) for x in l[0]]
+for i in range(1,len(l)-1):
+    la=left(l,i)
+    rb=rite(l,i)
+    if la==True and rb==True:
+        print(l[i])
+        df=0
+        break
+    else:df=-1
+if df==-1:print("-1")

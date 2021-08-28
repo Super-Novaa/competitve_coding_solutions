@@ -1,0 +1,6 @@
+from itertools import permutations
+s,l=input(),[]
+m=[''.join(p) for p in permutations(s)]
+for j in m:
+    if j[::-1]==j:l.append(j)
+print(*sorted(set(l)),sep='\n')
